@@ -5,8 +5,8 @@ A new Rockbox theme, Frankensteined together (I'm by no means a bitmapper)
 .rockbox
  - backdrops
  - fonts
-  - 10-Adobe-Helvetica.fnt
-  - 13-Adobe-Helvetica-Bold.fnt
+	- 10-Adobe-Helvetica.fnt
+	- 13-Adobe-Helvetica-Bold.fnt
  - icons
  - themes
  - cps
