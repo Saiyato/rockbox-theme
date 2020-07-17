@@ -1,0 +1,102 @@
+# Theme by Saiyato
+# While playing skin file
+# CC-BY-SA
+
+# --// Basic settings
+%wd
+%X(wps.bmp)
+%Fl(2,13-Adobe-Helvetica-Bold.fnt)
+%Fl(3,10-Adobe-Helvetica.fnt)
+
+# --// Cover Artwork
+# Inspired by Astell&Kern, Cayin & Sony
+# -----------------------------
+# Viewport
+# %V(x,y,width,height,fontid)
+# -----------------------------
+# Picture settings
+# %Cl(xpos, ypos, maxwidth, maxheight, horizontal alignment, vertical alignment)
+
+%V(0,20,170,170,-)
+%Cl(0,0,170,170,c,c)
+%Cd
+
+#%?if(%ss(0, 2, %St(font), number), >, 15)<%Vd(metadata19)|%Vd(metadata14)>
+
+%Vd(datetime)
+%Vd(tracktitle)
+%Vd(trackartist)
+%Vd(trackalbum)
+%Vd(tracktechinfo)
+%Vd(playingtime)
+%Vd(totaltime)
+
+# --// Meta Data
+
+#%Vl(current,160,20,160,20,1)
+#%Vf(9d9d9d)
+#%?if(%mh, =, h)<%s%ac%?iA<%iA|%?ia<%ia|Unknown Artist>>|%s%ac%?ia<%ia|Unknown Artist>>
+
+# Date and time
+%Vl(datetime,160,0,155,10,3)
+%Vf(e8e8e8)
+%s%ar%cd %?cm<Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec> %cY %cH:%cM
+
+# track title
+%Vl(tracktitle,180,20,110,30,2)
+%Vf(e8e8e8)
+%s%al%?it<%it|%fn>
+
+# track artist
+%Vl(trackartist,180,50,140,10,3)
+%Vf(9d9d9d)
+%s%al%?ia<%ia|%iA>
+
+# track album
+%Vl(trackalbum,180,65,140,10,3)
+%Vf(9d9d9d)
+%s%al%?id<%id|Unknown Album>
+
+# track tech info
+%Vl(tracktechinfo,180,80,140,10,3)
+%Vf(545454)
+%al%?fk<%fk|>kHz %fc
+
+# Playing time
+%Vl(playingtime,2,195,158,10,3)
+%Vf(e8e8e8)
+%al%pc
+
+# Total time
+%Vl(totaltime,160,195,158,10,3)
+%Vf(e8e8e8)
+%ar%pt
+
+# Progress Bar
+%V(0,210,320,10,-)
+%pb(0,0,320,10,progressbar.bmp)
+
+%Vd(options)
+%Vd(next)
+
+# From FullTouchD2
+%xl(S,shuffle.bmp,0,0,2)
+%T(10,92,60,30,shuffle)
+
+# Shuffle
+#%Vl(options,2,225,40,10,3)
+#%Vf(e8e8e8)
+#%alSHFL
+%V(2,225,40,10,6)
+%?ps<%xd(Sb)|%xd(Sa)>
+
+# Repeat
+# From photoSkins-vinyl
+%xl(R,Repeat.bmp,0,0,4)
+%V(42,220,40,20,-)
+%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>
+
+# Up next
+%Vl(next,82,225,238,10,3)
+%Vf(e8e8e8)
+%s%arNext up: %?Ia<%Ia - %It>
