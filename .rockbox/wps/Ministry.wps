@@ -1,102 +1,87 @@
 # Theme by Saiyato
-# While playing skin file
+# Platform: iPod Classic/Video
+# While Playing Skin
 # CC-BY-SA
-
-# --// Basic settings
+# Version 1.0
+# Last Update: August 4th, 2020
+# First Version: July 31st, 2020
 %wd
+# icon by Freepik
 %X(wps.bmp)
-%Fl(2,13-Adobe-Helvetica-Bold.fnt)
+# --// Preload images
+%xl(C,codecs.bmp,5,100,21)
+# Battery; copied from IPhoshaV1.1 skin
+%xl(B,battery.bmp,0,0,15)
+# Lock: copied from AAAudio skin
+%xl(L,lock-176x132x16.bmp,0,0,2)
+# Repeat, Shuffle & Volume; inverted images from iVideo skin
+%xl(R,repeat_icon.bmp,0,0,4)
+%xl(S,shuffle_icon.bmp,0,0)
+%xl(x,volume_up.bmp,0,0)
+%xl(y,volume_down.bmp,0,0)
+# Crossfade; modified from smart320 skin
+%xl(F,crossfade.bmp,0,0)
+# Playmode; inspired by AAAudio skin
+%xl(P,playmode-10x55x32.bmp,0,0,5)
+# --// Load fonts
+%Fl(2,8-Adobe-Helvetica.fnt)
 %Fl(3,10-Adobe-Helvetica.fnt)
-
-# --// Cover Artwork
-# Inspired by Astell&Kern, Cayin & Sony
-# -----------------------------
-# Viewport
-# %V(x,y,width,height,fontid)
-# -----------------------------
-# Picture settings
-# %Cl(xpos, ypos, maxwidth, maxheight, horizontal alignment, vertical alignment)
-
-%V(0,20,170,170,-)
-%Cl(0,0,170,170,c,c)
+%Fl(4,14-Adobe-Helvetica-Bold.fnt)
+# --// Codec
+%?fc<%xd(Ca)|%xd(Cb)|%xd(Cc)|%xd(Cd)|%xd(Ce)|%xd(Cf)|%xd(Cg)|%xd(Ch)|%xd(Ci)|%xd(Cj)|%xd(Ck)|%xd(Cl)|%xd(Cm)|%xd(Cn)|%xd(Co)|%xd(Cp)|%xd(Cq)|%xd(Cr)|%xd(Cs)|%xd(Ct)|%xd(Cu)>
+# --// Toggle song progression and volume
+%?mv(2.0)<%Vd(volume)%Vd(volumenum)|%Vd(songprogress)%Vd(tracktime)%Vd(upnext)>
+# --// Status bar
+%V(5,2,60,13,2)%Vf(e8e8e8)
+%s%al%cd %?cm<Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec> %cY
+%V(145,2,30,10,2)%Vf(e8e8e8)
+%ac%cH:%cM
+%V(175,2,13,10,-)%?mh<%xd(La)|%xd(Lb)>
+%V(276,2,10,11,-)%?mp<%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)|%xd(Pe)>
+%V(291,2,26,12,-)
+%?bp<%?bc<%?bl<|%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bc)>|%xd(Bd)>|%?bl<|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)|%xd(Bk)|%xd(Bl)|%xd(Bm)|%xd(Bn)|%xd(Bo)>>
+# --// Artwork
+%V(165,50,150,150,-)
+%Cl(0,0,150,150,c,c)
 %Cd
-
-#%?if(%ss(0, 2, %St(font), number), >, 15)<%Vd(metadata19)|%Vd(metadata14)>
-
-%Vd(datetime)
-%Vd(tracktitle)
-%Vd(trackartist)
-%Vd(trackalbum)
-%Vd(tracktechinfo)
-%Vd(playingtime)
-%Vd(totaltime)
-
-# --// Meta Data
-
-#%Vl(current,160,20,160,20,1)
-#%Vf(9d9d9d)
-#%?if(%mh, =, h)<%s%ac%?iA<%iA|%?ia<%ia|Unknown Artist>>|%s%ac%?ia<%ia|Unknown Artist>>
-
-# Date and time
-%Vl(datetime,160,0,155,10,3)
-%Vf(e8e8e8)
-%s%ar%cd %?cm<Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec> %cY %cH:%cM
-
-# track title
-%Vl(tracktitle,180,20,110,30,2)
-%Vf(e8e8e8)
+# -- // Title
+%V(5,20,315,30,4)%Vf(e8e8e8)
 %s%al%?it<%it|%fn>
-
-# track artist
-%Vl(trackartist,180,50,140,10,3)
-%Vf(9d9d9d)
-%s%al%?ia<%ia|%iA>
-
-# track album
-%Vl(trackalbum,180,65,140,10,3)
-%Vf(9d9d9d)
-%s%al%?id<%id|Unknown Album>
-
-# track tech info
-%Vl(tracktechinfo,180,80,140,10,3)
-%Vf(545454)
-%al%?fk<%fk|>kHz %fc
-
-# Playing time
-%Vl(playingtime,2,195,158,10,3)
-%Vf(e8e8e8)
-%al%pc
-
-# Total time
-%Vl(totaltime,160,195,158,10,3)
-%Vf(e8e8e8)
-%ar%pt
-
-# Progress Bar
-%V(0,210,320,10,-)
+# --// Artist
+%V(5,55,155,17,3)%Vf(9d9d9d)
+%s%al%?ia<%ia|%?iA<%iA|%Sx(Unknown) %Sx(Artist)>>
+# --// Album
+%V(5,72,155,17,3)%Vf(9d9d9d)
+%s%al%?id<%id|%Sx(Unknown) %Sx(Album)>
+# --// Sampling and bitrate
+%V(6,118,155,15,2)%Vf(9d9d9d)
+%al%?fk<%fk|?>kHz
+%V(6,135,135,15,2)%Vf(9d9d9d)
+%fbkbps %?fv<VBR|CBR>
+# --// Track time & progress bar
+%Vl(tracktime,5,195,155,10,2)%Vf(e8e8e8)
+%al%pc / %pt
+%Vl(songprogress,0,210,320,10,-)
 %pb(0,0,320,10,progressbar.bmp)
 
-%Vd(options)
-%Vd(next)
+# Repeat, Shuffle & Crossfade
+%V(5,160,19,20,-)
+%?mm<|%xd(Ra)|%xd(Rb)|%t(1.0)%xd(Rc);%t(1.0)%xd(Ra)|%xd(Rd)>
+%V(30,160,19,20,-)
+%?ps<%xd(S)|>
+%V(55,165,18,14,-)
+%?xf<|%xd(F)|%xd(F)|%xd(F)|%xd(F)|%xd(F)>
 
-# From FullTouchD2
-%xl(S,shuffle.bmp,0,0,2)
-%T(10,92,60,30,shuffle)
+# --// Up next
+%Vl(upnext,0,225,320,15,2)%Vf(e8e8e8)
+%s%alNext up: %?Ia<%Ia - %It>
 
-# Shuffle
-#%Vl(options,2,225,40,10,3)
-#%Vf(e8e8e8)
-#%alSHFL
-%V(2,225,40,10,6)
-%?ps<%xd(Sb)|%xd(Sa)>
-
-# Repeat
-# From photoSkins-vinyl
-%xl(R,Repeat.bmp,0,0,4)
-%V(42,220,40,20,-)
-%?mm<|%xd(Ra)|%xd(Rb)|%xd(Rc)|%xd(Rd)>
-
-# Up next
-%Vl(next,82,225,238,10,3)
-%Vf(e8e8e8)
-%s%arNext up: %?Ia<%Ia - %It>
+# --// Volume
+%Vl(volumenum,5,195,160,10,2)%Vf(e8e8e8)
+%al%pvdB
+%Vl(volume,22,221,264,10,-)
+%pv(0,0,264,10,progressbar.bmp)
+%Vl(volume,296,216,19,19,-)
+%xd(x)
+%Vl(volume,5,216,19,19,-)
+%xd(y)

@@ -1,0 +1,73 @@
+#AAAudio
+#By: Panzerfauste & Nathan Beaumont
+#Platform: iPod Nano 2G (176x132x16)
+#version 1.1
+#Derived from "Cabbie 2.0" (C) Johannes Voggenthaler (Zinc Alloy)
+#Converted to 320x240 P Poorten Jan 2016
+#
+%wd
+#Backdrop
+%X(wpsbackdrop-320x240x16.bmp)
+#Preloaded Images
+%xl(A,lock-176x132x16.bmp,0,0,2)
+%xl(B,battery-176x132x16.bmp,0,0,10)
+%xl(C,volume-176x132x16.bmp,0,0,10)
+%xl(D,shuffle-176x132x16.bmp,0,0)
+%xl(E,repeat-176x132x16.bmp,0,0,4)
+%xl(F,playmode-176x132x16.bmp,0,0,5)
+#Progress Bar
+%?C<%Vd(a)|%Vd(b)>
+%V(8,194,304,8,-)
+%pb(0,0,304,8,pb-176x132x16.bmp)
+#Hold Switch Icon
+%V(160,225,13,10,-)
+%?mh<%xd(Aa)|%xd(Ab)>
+#Battery Icon
+%V(300,3,16,9,-)
+%?bp<%?bc<%xd(Ba)|%xd(Bb)>|%?bl<|%xd(Bc)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)>>
+#Volume Icons
+%V(286,224,13,9,-)
+%?pv<%xd(Ca)|%xd(Cb)|%xd(Cc)|%xd(Cd)|%xd(Ce)|%xd(Cf)|%xd(Cg)|%xd(Ch)|%xd(Ci)|%xd(Cj)>
+#Shuffle Icon
+%V(251,225,15,8,-)
+%?ps<%xd(D)>
+#Repeat Mode Icons
+%V(271,223,11,15,-)
+%?mm<|%xd(Ea)|%xd(Eb)|%xd(Ec)|%xd(Ed)>
+#Playmode Icons
+%V(301,225,10,11,-)
+%?mp<%xd(Fa)|%xd(Fb)|%xd(Fc)|%xd(Fd)|%xd(Fe)>
+#Playlist Info
+%V(8,204,304,12,1)
+%al%pc%ac%?Sr<%pe %Sx(of) %pp|%pp %Sx(of) %pe>%ar%pr
+%ax%Vl(a,9,9,172,172,-)
+%Cl(0,0,172,172,c,c)
+%Cd
+#Album Art Text
+%ax%Vl(a,190,18,121,150,1)
+%s%al%?it<%it|%fn>
+%s%al%?ia<%ia|%?d(2)<%d(2)|%(root%)>>
+%s%al%?id<%id|%?d(1)<%d(1)|%(root%)>>
+%s%al%?iy<%iy|Unknown Year>
+%s%al%fc %?fv<~|>%fbkbps
+
+
+%s%ar%Sx(Next Track:)
+%s%ar%?It<%It|%Fn>
+%s%ar%?Ia<%Ia|>
+%s%ar%?Iy<%Iy|>
+%s%ar%Fc %?Fv<~|>%Fbkbps
+#No Album Art Text
+%Vl(b,9,18,302,150,1)
+%s%ac%?it<%it|%fn>
+%s%ac%?ia<%ia|%?d(2)<%d(2)|%(root%)>>
+%s%ac%?id<%id|%?d(1)<%d(1)|%(root%)>>
+%s%ac%?iy<%iy|Unknown Year>
+%s%ac%fc %?fv<~|>%fbkbps
+
+
+%ac%Sx(Next Track:)
+%s%ac%?It<%It|%Fn>
+%s%ac%?Ia<%Ia|>
+%s%ac%?Iy<%Iy|>
+%s%ac%Fc %?Fv<~|>%Fbkbps

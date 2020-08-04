@@ -1,0 +1,3 @@
+%xl(B,battery.bmp,0,0,23)
+%V(291,0,25,11,-)
+%?bp<%?bc<%t(1.0)%xd(Ba);%t(1.0)%xd(Bb)|%xd(Bc)>|%?bl<%xd(Bd)|%xd(Bd)|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)|%xd(Bk)|%xd(Bl)|%xd(Bm)|%xd(Bn)|%xd(Bo)|%xd(Bp)|%xd(Bq)|%xd(Br)|%xd(Bs)|%xd(Bt)|%xd(Bu)|%xd(Bv)|%xd(Bw)||>>

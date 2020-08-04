@@ -1,106 +1,50 @@
 # Theme by Saiyato
-# Base skin file
+# Platform: iPod Classic/Video
+# Status Base Skin
 # CC-BY-SA
-
-# Disable status bar
+# Version 1.0
+# Last Update: August 4th, 2020
+# First Version: July 31st, 2020
 %wd
-# Backdrop
-%X(-)
-
-# storage activity indicator off, lock on
-%xl(storageofflockon,storage_off-lock_on.bmp,0,0)
-# storage activity indicator on, lock off
-%xl(storageonlockoff,storage_on-lock_off.bmp,0,0)
-# storage activity indicator on, lock on
-%xl(storageonlockon,storage_on-lock_on.bmp,0,0)
-
-# Status bar: emphasize volume when > 0dB, storage activity, and battery level when < 10%
-# Rockbox bug/quirk: %?if() evaluates the number that's being tested to (number + 1).
-# Example: '14-Nimbus' will return true when tested to be equal to 15.
-# So here when I'm testing whether the font is '> 15', I'm really testing if the font size is strictly superior to 14, not 15.
-%?if(%ss(0, 2, %St(font), number), >, 15)<%Vd(status19)|%Vd(status14)>%Vd(storage)
-
-# Volume
-%Vl(status14,10,4,142,16,-)
-%Vf(ddeed9)
-%?if(%pv, >, 0)<%ac[ %pv dB ]|%ac%pv dB>
-
-%Vl(status19,10,1,142,19,-)
-%Vf(ddeed9)
-%?if(%pv, >, 0)<%ac[ %pv dB ]|%ac%pv dB>
-
-# Storage
-%Vl(storage,152,5,15,10,-)
-%?if(%lh, =, h)<%?if(%mh, =, h)<%xd(storageonlockon)|%xd(storageonlockoff)>|%?if(%mh, =, h)<%xd(storageofflockon)|>>
-
-# Battery
-%Vl(status14,167,4,143,16,-)
-%Vf(ddeed9)
-%?if(%bc, =, c)<%ac+%bl%%|%?if(%bp, =, p)<%ac*%bl%%|%?if(%bl, <, 10)<%ac[ %bl%% ]|%ac%bl%%>>>
-
-%Vl(status19,167,1,143,19,-)
-%Vf(ddeed9)
-%?if(%bc, =, c)<%ac+%bl%%|%?if(%bp, =, p)<%ac*%bl%%|%?if(%bl, <, 10)<%ac[ %bl%% ]|%ac%bl%%>>>
-
-# Menu
-%Vi(-,10,31,300,171,-)
-
-# Progress Bar
+# --// Preload images
+%xl(B,battery.bmp,0,0,15)
+# Lock: copied from AAAudio skin
+%xl(L,lock-176x132x16.bmp,0,0,2)
+# Playmode; inspired by AAAudio skin
+%xl(P,playmode-10x55x32.bmp,0,0,5)
+# --// Load fonts
+%Fl(2,8-Adobe-Helvetica.fnt)
+%Fl(3,10-Adobe-Helvetica.fnt)
+%Fl(4,14-Adobe-Helvetica.fnt)
+%Fl(5,14-Adobe-Helvetica-bold.fnt)
+# --// Status bar
+%V(291,2,26,12,-)
+%?bp<%?bc<%?bl<|%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bc)>|%xd(Bd)>|%?bl<|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)|%xd(Bk)|%xd(Bl)|%xd(Bm)|%xd(Bn)|%xd(Bo)>>
+%V(5,2,60,13,2)%Vf(e8e8e8)
+%s%al%cd %?cm<Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec> %cY
+%V(145,2,30,10,2)%Vf(e8e8e8)
+%ac%cH:%cM
+%V(175,2,13,10,-)%?mh<%xd(La)|%xd(Lb)>
+%V(276,2,10,11,-)%?mp<%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)|%xd(Pe)>
+# --// Menu
+%?if(%cs, >, 1)<%Vd(tree)|%Vd(main)>
+%Vl(tree,5,20,315,30,5)%Vf(e8e8e8)
+%s%al%?Lt<%al%?cs<||%?Rp<%Sx(Recording)>|%?tp<%Sx(FM Radio)>|%Sx(Playlist)|Rockbox|%Sx(File View)|Rockbox|Rockbox>> %> %Lt
+%Vl(main,5,20,315,30,5)%Vf(e8e8e8)%Lt
+%Vi(-,10,50,310,158,4)
+# --// Meta data + progressbar; inspired by Googley skin
 %?mp<|%Vd(progressbar)>
 %Vl(progressbar,0,208,320,2,-)
 %pb(0,0,320,2,progressbar.bmp)
-
-# Cover Artwork
 %V(4,214,22,22,-)
 %Cl(0,0,22,22,c,c)
 %Cd
-
-# Metadata
-
-# Bottom bar: display date, or song metadata, or radio name and frequency
-# Playback stopped
-%?if(%mp, =, 1)<%?if(%ss(0, 2, %St(font), number), >, 15)<%Vd(date19)|%Vd(date14)>|>
-# Playback not stopped, playing music
-%?if(%mp, >, 1)<%?if(%mp, <=, 7)<%?if(%ss(0, 2, %St(font), number), >, 15)<%Vd(metadata19)|%Vd(metadata14)>%Vd(play)|>|>
-# Playback not stopped, listening to the radio
-%?if(%mp, >, 1)<%?if(%mp, >=, 8)<%?if(%ss(0, 2, %St(font), number), >, 15)<%Vd(radio19)|%Vd(radio14)>%Vd(play)|>|>
-
-# Song Metadata
-%Vl(metadata14,34,218,259,17,-)
-%Vf(555555)
-%s%al%?it<“%it”|%fn>%?ia<%, by %ia|>
-
-%Vl(metadata19,34,215,259,25,-)
-%Vf(555555)
-%s%al%?it<“%it”|%fn>%?ia<%, by %ia|>
-
-# Radio Name and Frequency
-%Vl(radio14,34,218,259,17,-)
-%Vf(555555)
-%s%al%?Tn<%Tn %(%tf FM%)|%?ty<%ty %(%tf FM%)|FM Radio %(%tf MHz%)>>
-
-%Vl(radio19,34,215,259,25,-)
-%Vf(555555)
-%s%al%?Tn<%Tn %(%tf FM%)|%?ty<%ty %(%tf FM%)|FM Radio %(%tf MHz%)>>
-
-# Play Status
-%Vl(play,299,216,17,17,-)
-%xl(playmode,playmode.bmp,0,0,12)%xd(playmode,%mp,0)
-
-# Date
-%Vl(date14,34,218,216,17,-)
-%Vf(555555)
-%s%al%?cu<Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday>, %?cm<January|February|March|April|May|June|July|August|September|October|November|December> %ce, %cY
-
-%Vl(date19,34,215,186,25,-)
-%Vf(555555)
-%s%al%ca, %cb %ce, %cY
-
-# Time
-%Vl(date14,250,218,60,17,-)
-%Vf(555555)
-%s%ar%?cf<%cH:%cM|%cl:%cM %cP>
-
-%Vl(date19,220,215,90,25,-)
-%Vf(555555)
-%s%ar%?cf<%cH:%cM|%cl:%cM %cP>
+%V(40,217,280,17,3)%Vf(e8e8e8)
+%s%al%?ia<%ia|%?iA<%iA|%Sx(Unknown) %Sx(Artist)>> - %?it<%it|%fn> %(%?id<%id|%Sx(Unknown) %Sx(Album)>%)
+-- // not yet implemented
+#%Vl(radio,163,158,154,24,1)%Vf(ebeced)
+#%ac%tf Mhz
+#%Vl(radio,163,187,154,14,1)%Vf(ebeced)
+#%t(6)%s%ac%?Tn<%Tn|%?ty<%ty|%?tt<Tuned|tune>>>;%t(6)%ac%?Tn<%Tn|%?ty<%ty|%?tt<Tuned|tune>>>
+#%Vl(radio,163,203,154,14,1)%Vf(ebeced)
+#%t(6)%ac%?tz<%tz|Signal: %?tr<Faint/No Signal|Weak|Fair|Strong|Very Strong>>;%t(6)%s%ac%?tz<%tz|Signal: %?tr<Faint/No Signal|Weak|Fair|Strong|Very Strong>>
