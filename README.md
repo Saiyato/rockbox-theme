@@ -33,11 +33,7 @@ This theme is far from done, I just wanted to upload the project for source cont
 	- Ministry.wps
 
 ## Printscreens
-Menu
 ![Alt text](/images/menu.png?raw=true "menu")
-Playback screen
 ![Alt text](/images/playback.png?raw=true "playback")
-Change volume
 ![Alt text](/images/volume.png?raw=true "volume")
-Database screen
 ![Alt text](/images/database.png?raw=true "database")
