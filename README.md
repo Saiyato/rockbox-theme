@@ -6,25 +6,38 @@ This theme is far from done, I just wanted to upload the project for source cont
 ## File manifest
 .rockbox
  - backdrops
-	- Ministry-backdrop.bmp
+	- Ministry-backdrop-320x240.bmp
  - fonts
+	- 8-Adobe-Helvetica.fnt
 	- 10-Adobe-Helvetica.fnt
-	- 13-Adobe-Helvetica-Bold.fnt
+	- 14-Adobe-Helvetica.fnt
+	- 14-Adobe-Helvetica-Bold.fnt	
  - icons
 	- Ministry-icons.bmp
  - themes
 	- Ministry.cfg
  - wps
 	- Ministry
-		- fms.bmp
-		- playmode.bmp
+		- battery.bmp
+		- codecs.bmp
+		- crossfade.bmp
+		- lock-176x132x16.bmp
+		- playmode-10x55x32.bmp
 		- progressbar.bmp
-		- repeat.bmp
-		- shuffle.bmp
-		- storage_off-lock_on.bmp
-		- storage_on-lock_off.bmp
-		- storage_on-lock_on.bmp
+		- repeat_icon.bmp
+		- shuffle_icon.bmp
+		- volume_down.bmp
+		- volume_up.bmp
 		- wps.bmp
-	- Ministry.fms
 	- Ministry.sbs
 	- Ministry.wps
+
+## Printscreens
+Menu
+![Alt text](/images/meu.png?raw=true "menu")
+Playback screen
+![Alt text](/images/meu.png?raw=true "playback")
+Change volume
+![Alt text](/images/meu.png?raw=true "volume")
+Database screen
+![Alt text](/images/meu.png?raw=true "database")
