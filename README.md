@@ -34,10 +34,10 @@ This theme is far from done, I just wanted to upload the project for source cont
 
 ## Printscreens
 Menu
-![Alt text](/images/meu.png?raw=true "menu")
+![Alt text](/images/menu.png?raw=true "menu")
 Playback screen
-![Alt text](/images/meu.png?raw=true "playback")
+![Alt text](/images/playback.png?raw=true "playback")
 Change volume
-![Alt text](/images/meu.png?raw=true "volume")
+![Alt text](/images/volume.png?raw=true "volume")
 Database screen
-![Alt text](/images/meu.png?raw=true "database")
+![Alt text](/images/database.png?raw=true "database")
