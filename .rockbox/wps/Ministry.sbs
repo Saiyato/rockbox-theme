@@ -1,17 +1,20 @@
-# Theme by Saiyato
+# Theme: Ministry
+# by Saiyato
 # Platform: iPod Classic/Video
 # Status Base Skin
 # CC-BY-SA
 # Version 1.0
-# Last Update: August 4th, 2020
+# Last Update: August 6th, 2020
 # First Version: July 31st, 2020
 %wd
 # --// Preload images
-%xl(B,battery.bmp,0,0,15)
+%xl(B,battery_icons-24x150x24.bmp,0,0,15)
 # Lock: copied from AAAudio skin
-%xl(L,lock-176x132x16.bmp,0,0,2)
+%xl(L,lock_icon-176x132x16.bmp,0,0,2)
+# Hard disk; Freepik icon (by flaticon)
+%xl(H,harddisk_icon-11x11x32.bmp,0,0)
 # Playmode; inspired by AAAudio skin
-%xl(P,playmode-10x55x32.bmp,0,0,5)
+%xl(P,playmode_icons-10x55x32.bmp,0,0,5)
 # --// Load fonts
 %Fl(2,8-Adobe-Helvetica.fnt)
 %Fl(3,10-Adobe-Helvetica.fnt)
@@ -25,6 +28,7 @@
 %V(145,2,30,10,2)%Vf(e8e8e8)
 %ac%cH:%cM
 %V(175,2,13,10,-)%?mh<%xd(La)|%xd(Lb)>
+%V(195,2,11,11,-)%?if(%lh, =, h)<%xd(H)|>
 %V(276,2,10,11,-)%?mp<%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)|%xd(Pe)>
 # --// Menu
 %?if(%cs, >, 1)<%Vd(tree)|%Vd(main)>
@@ -35,16 +39,9 @@
 # --// Meta data + progressbar; inspired by Googley skin
 %?mp<|%Vd(progressbar)>
 %Vl(progressbar,0,208,320,2,-)
-%pb(0,0,320,2,progressbar.bmp)
+%pb(0,0,320,2,progressbar-320x10x8.bmp)
 %V(4,214,22,22,-)
 %Cl(0,0,22,22,c,c)
 %Cd
-%V(40,217,280,17,3)%Vf(e8e8e8)
+%V(40,217,275,17,3)%Vf(e8e8e8)
 %s%al%?ia<%ia|%?iA<%iA|%Sx(Unknown) %Sx(Artist)>> - %?it<%it|%fn> %(%?id<%id|%Sx(Unknown) %Sx(Album)>%)
--- // not yet implemented
-#%Vl(radio,163,158,154,24,1)%Vf(ebeced)
-#%ac%tf Mhz
-#%Vl(radio,163,187,154,14,1)%Vf(ebeced)
-#%t(6)%s%ac%?Tn<%Tn|%?ty<%ty|%?tt<Tuned|tune>>>;%t(6)%ac%?Tn<%Tn|%?ty<%ty|%?tt<Tuned|tune>>>
-#%Vl(radio,163,203,154,14,1)%Vf(ebeced)
-#%t(6)%ac%?tz<%tz|Signal: %?tr<Faint/No Signal|Weak|Fair|Strong|Very Strong>>;%t(6)%s%ac%?tz<%tz|Signal: %?tr<Faint/No Signal|Weak|Fair|Strong|Very Strong>>

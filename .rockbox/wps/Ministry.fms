@@ -7,33 +7,28 @@
 # Last Update: August 6th, 2020
 # First Version: July 31st, 2020
 %wd
-# icon by Freepik (by flaticon)
-%X(wps_backdrop-320x240x32.bmp)
+# icon by Freepik (by Birtday Pack)
+%X(fms_backdrop-320x240x32.bmp)
 # --// Preload images
-%xl(C,codec_icons-32x294x32.bmp,5,100,21)
 # Battery; copied from IPhoshaV1.1 skin
 %xl(B,battery_icons-24x150x24.bmp,0,0,15)
 # Lock: copied from AAAudio skin
 %xl(L,lock_icon-176x132x16.bmp,0,0,2)
 # Hard disk; Freepik icon (by flaticon)
 %xl(H,harddisk_icon-11x11x32.bmp,0,0)
-# Repeat, Shuffle & Volume; inverted images from iVideo skin
-%xl(R,repeat_icons-19x80x24.bmp,0,0,4)
-%xl(S,shuffle_icon-19x20x24.bmp,0,0)
+%xl(R,broadcast_icon-11x11x32.bmp,0,0)
+# Volume inverted images from iVideo skin
 %xl(x,volume_up_icon-19x19x32.bmp,0,0)
 %xl(y,volume_down_icon-19x19x32.bmp,0,0)
-# Crossfade; modified from smart320 skin
-%xl(F,crossfade_icon-18x9x32.bmp,0,0)
 # Playmode; inspired by AAAudio skin
 %xl(P,playmode_icons-10x55x32.bmp,0,0,5)
+%xl(S,signal_strength_icons-17x68x32.bmp,0,0,4)
 # --// Load fonts
 %Fl(2,8-Adobe-Helvetica.fnt)
 %Fl(3,10-Adobe-Helvetica.fnt)
 %Fl(4,14-Adobe-Helvetica-Bold.fnt)
-# --// Codec
-%?fc<%xd(Ca)|%xd(Cb)|%xd(Cc)|%xd(Cd)|%xd(Ce)|%xd(Cf)|%xd(Cg)|%xd(Ch)|%xd(Ci)|%xd(Cj)|%xd(Ck)|%xd(Cl)|%xd(Cm)|%xd(Cn)|%xd(Co)|%xd(Cp)|%xd(Cq)|%xd(Cr)|%xd(Cs)|%xd(Ct)|%xd(Cu)>
 # --// Toggle song progression and volume
-%?mv(2.0)<%Vd(volume)%Vd(volumenum)|%Vd(songprogress)%Vd(tracktime)%Vd(upnext)>
+%?mv(2.0)<%Vd(volume)%Vd(volumenum)|%Vd(frequencybar)%Vd(frequency)%Vd(status)>
 # --// Status bar
 %V(5,2,60,13,2)%Vf(e8e8e8)
 %s%al%cd %?cm<Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec> %cY
@@ -41,45 +36,38 @@
 %ac%cH:%cM
 %V(175,2,13,10,-)%?mh<%xd(La)|%xd(Lb)>
 %V(195,2,11,11,-)%?if(%lh, =, h)<%xd(H)|>
-%V(276,2,10,11,-)%?mp<%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)|%xd(Pe)>
+#%V(276,2,10,11,-)%?mp<%xd(Pa)|%xd(Pb)|%xd(Pc)|%xd(Pd)|%xd(Pe)>
+%V(276,2,11,11,-)%xd(R)
 %V(291,2,26,12,-)
 %?bp<%?bc<%?bl<|%xd(Ba)|%xd(Bb)|%xd(Bc)|%xd(Bc)>|%xd(Bd)>|%?bl<|%xd(Be)|%xd(Bf)|%xd(Bg)|%xd(Bh)|%xd(Bi)|%xd(Bj)|%xd(Bk)|%xd(Bl)|%xd(Bm)|%xd(Bn)|%xd(Bo)>>
 # --// Artwork
 %V(165,50,150,150,-)
 %Cl(0,0,150,150,c,c)
 %Cd
-# -- // Title
+# -- // Preset or RDS name
 %V(5,20,315,30,4)%Vf(e8e8e8)
-%s%al%?it<%it|%fn>
-# --// Artist
+%s%al%?Tn<%Tn|%?ty<%ty|FM Radio>>
+# --// RDS data
 %V(5,55,155,17,3)%Vf(9d9d9d)
-%s%al%?ia<%ia|%?iA<%iA|%Sx(Unknown) %Sx(Artist)>>
-# --// Album
+%s%al%?tz<%tz|No RDS Data>
+# --// Preset
 %V(5,72,155,17,3)%Vf(9d9d9d)
-%s%al%?id<%id|%Sx(Unknown) %Sx(Album)>
-# --// Sampling and bitrate
-%V(6,118,155,15,2)%Vf(9d9d9d)
-%al%?fk<%fk|?>kHz
-%V(6,135,135,15,2)%Vf(9d9d9d)
-%fbkbps %?fv<VBR|CBR>
-# --// Track time & progress bar
-%Vl(tracktime,5,195,155,10,2)%Vf(e8e8e8)
-%al%pc / %pt
-%Vl(songprogress,0,210,320,10,-)
+%s%al%?Ti<Preset %Ti/%Tc|Preset not saved>
+# --// Signal strength
+# Wifi signal; Freepik icon (by flaticon)
+%V(5,118,17,17,-)%?tr<%xd(Sd)|%xd(Sc)|%xd(Sb)|%xd(Sa)>
+%V(6,140,155,15,2)%Vf(9d9d9d)
+%s%al%?tr<Faint/No Signal|Weak|Fair|Strong|Very Strong> Signal
+%V(6,160,135,15,2)%Vf(9d9d9d)
+%s%al%?ts<Stereo|Mono>
+# --// Frequency
+%Vl(frequency,5,195,155,10,2)%Vf(e8e8e8)
+%s%al%?Ti<|%tf MHz>
+%Vl(frequencybar,0,210,320,10,-)
 %pb(0,0,320,10,progressbar-320x10x8.bmp)
-
-# Repeat, Shuffle & Crossfade
-%V(5,160,19,20,-)
-%?mm<|%xd(Ra)|%xd(Rb)|%t(1.0)%xd(Rc);%t(1.0)%xd(Ra)|%xd(Rd)>
-%V(30,160,19,20,-)
-%?ps<%xd(S)|>
-%V(55,165,18,14,-)
-%?xf<|%xd(F)|%xd(F)|%xd(F)|%xd(F)|%xd(F)>
-
-# --// Up next
-%Vl(upnext,0,225,320,15,2)%Vf(e8e8e8)
-%s%alNext up: %?Ia<%Ia - %It>
-
+# --// Status
+%Vl(status,0,225,320,15,2)%Vf(e8e8e8)
+#%t(6)%s%ac%?Tn<%Tn|%?ty<%ty|%?tt<Tuned|tune>>>;%t(6)%ac%?Tn<%Tn|%?ty<%ty|%?tt<Tuned|tune>>>
 # --// Volume
 %Vl(volumenum,5,195,160,10,2)%Vf(e8e8e8)
 %al%pvdB
