@@ -44,4 +44,4 @@
 %Cl(0,0,22,22,c,c)
 %Cd
 %V(40,217,275,17,3)%Vf(e8e8e8)
-%s%al%?ia<%ia|%?iA<%iA|%Sx(Unknown) %Sx(Artist)>> - %?it<%it|%fn> %(%?id<%id|%Sx(Unknown) %Sx(Album)>%)
+%?if(%mp, >, 1)<%s%al%?ia<%ia|%?iA<%iA|%Sx(Unknown) %Sx(Artist)>> - %?it<%it|%fn> %(%?id<%id|%Sx(Unknown) %Sx(Album)>%)|Nothing playing>
