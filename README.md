@@ -37,6 +37,9 @@ This theme is far from done, I just wanted to upload the project for source cont
 	- Ministry.sbs
 	- Ministry.wps
 
+## How to use
+It's quite simple really, download the zipfile and copy the contents to your Rockbox device (the whole .rockbox folder), it will not overwrite (unless someone used the same filenames) anything and copy all files to the correct directories.
+
 ## Printscreens
 ![Alt text](/images/menu.png?raw=true "menu")
 ![Alt text](/images/playback.png?raw=true "playback")
