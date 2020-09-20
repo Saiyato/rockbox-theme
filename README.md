@@ -46,4 +46,4 @@ This theme is far from done, I just wanted to upload the project for source cont
 
 ## Credits
 
-This theme is mainly an adaptations of the "Googley" theme created by Guillaume Cocatre-Zilgi. Some parts we're used from other skins: iVideo (by Humberto Santana), AAAudio (by Panzerfauste & Nathan Beaumont), IPhoshaV1.1 (by rorogio) and smart320 (by Sorin Costache).
+This theme is mainly an adaptations of the "Googley" theme created by Guillaume Cocatre-Zilgi. Some parts were used from other skins: iVideo (by Humberto Santana), AAAudio (by Panzerfauste & Nathan Beaumont), IPhoshaV1.1 (by rorogio) and smart320 (by Sorin Costache).
